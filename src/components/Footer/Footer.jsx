@@ -17,17 +17,17 @@ const Footer = () => {
                 className="space-y-6"
             >
                 <h1 className="text-3xl font-bold uppercase">Contatos</h1>
-                <p className="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptate.
+                <p className="mt-4">Entre em contato e vamos construir novas oportunidades juntos.
                 </p>
                 <div>
                     <p className="flex items-center gap-2">
                         <FaPhone />
-                        <span>123-456-789</span>
+                        <span>+55 47 99928-7305</span>
                     </p>
                     <p className="flex items-center gap-2 mt-2">
                         {" "}
                         <FaMapLocation />
-                        <span>123, Lorem ipsum dolor, sit amet.</span>
+                        <span>Itajaí - SC</span>
 
                     </p>
                 </div>
