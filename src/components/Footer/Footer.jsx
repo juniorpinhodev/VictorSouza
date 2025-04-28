@@ -1,7 +1,16 @@
 import React from "react";
-import { FaFacebook, FaInstagram, FaYoutube, FaWhatsapp } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaYoutube, FaWhatsapp, FaTiktok, FaLinkedin } from "react-icons/fa";
 import { FaPhone, FaMapLocation } from "react-icons/fa6";
 import { motion } from "framer-motion";
+
+const socialLinks = [
+    { href: "https://wa.me/5547999287305", icon: <FaWhatsapp /> },
+    { href: "https://www.youtube.com/@leilaoemfamilia", icon: <FaYoutube /> },
+    { href: "https://www.linkedin.com/in/victor-luis-nunes-de-souza-03a843bb/", icon: <FaLinkedin /> },
+    { href: "https://www.facebook.com/profile.php?id=100070768329431", icon: <FaFacebook /> },
+    { href: "https://www.instagram.com/vict0rs0uza/", icon: <FaInstagram /> },
+    { href: "https://www.tiktok.com/@leilaoemfamilia", icon: <FaTiktok /> },
+];
 
 const Footer = () => {
   return (
@@ -48,21 +57,29 @@ const Footer = () => {
                     </ul>
                 </div>
             </motion.div>
+
             {/* <!-- redes sociais --> */}
             <motion.div 
                 initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y:0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.6 }}
-                className="space-y-6">
-
+                className="space-y-6"
+            >
                 <h1 className="text-3xl font-bold">Siga-me</h1>
                 <div className="flex items-center gap-3 mt-4">
-                    <FaFacebook className="text-3xl hover:scale-105 duration-300"/>
-                    <FaInstagram className="text-3xl hover:scale-105 duration-300"/>
-                    <FaYoutube className="text-3xl hover:scale-105 duration-300"/>
-                    <FaWhatsapp className="text-3xl hover:scale-105 duration-300"/>
+                    {socialLinks.map((social, index) => (
+                        <a 
+                            key={index}
+                            href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-3xl hover:scale-105 duration-300"
+                        >
+                            {social.icon}
+                        </a>
+                    ))}
                 </div>
-            </motion.div>         
+            </motion.div>        
             </div>
              {/* <!-- copyright --> */}
             
