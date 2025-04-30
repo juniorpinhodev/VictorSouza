@@ -83,8 +83,8 @@ const Footer = () => {
             </div>
              {/* <!-- copyright --> */}
             
-             <p className="text-white text-center mt-8 border-t-2 pt-8">2025 CopyRight - Todos os direitos reservados</p>
-             <p className="text-center">WebSite desenvolvido por <a href="https://juniorpinho.dev" target="_blank" > Junior Pinho|DEV</a></p>
+             <p className="text-white text-center mt-8 border-t-2 pt-8">© 2025 Victor Souza — Todos os direitos reservados</p>
+             <p className="text-center">Desenvolvido por <a href="https://juniorpinho.dev" target="_blank" > Junior Pinho | DEV</a></p>
         </div>
     </footer>
   </>
