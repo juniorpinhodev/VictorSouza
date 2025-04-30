@@ -1,6 +1,8 @@
 import React from 'react';
 import { UpdateFollower } from 'react-mouse-follower';
 import{ motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+
 import BlogCard1 from '../../assets/blogs/blog1.jpg';
 import BlogCard2 from '../../assets/blogs/blog2.jpg';
 import BlogCard3 from '../../assets/blogs/blog3.jpg';
@@ -12,28 +14,28 @@ const BlogsData = [
         title: 'Como identificar as melhores oportunidades em leilões da Caixa',
         desc: 'Aprenda as estratégias para encontrar imóveis com potencial de valorização em leilões bancários.',
         img: BlogCard1,
-        link: '#',
+        link: '/blog1',
     },
     {
         id: 2,
         title: 'Os 5 erros mais comuns ao investir em imóveis de leilão',
         desc: 'Evite prejuízos conhecendo as principais armadilhas que afetam investidores iniciantes.',
         img: BlogCard2,
-        link: '#',
+        link: '/blog2',
     },
     {
         id: 3,
         title: 'Guia completo: Da arrematação à reforma do imóvel',
         desc: 'Passo a passo para transformar uma propriedade arrematada em leilão em um excelente investimento.',
         img: BlogCard3,
-        link: '#',
+        link: '/blog3',
     },
     {
         id: 4,
         title: 'Como calcular o potencial de valorização de um imóvel',
         desc: 'Métodos práticos para avaliar o retorno sobre investimento em propriedades de leilão.',
         img: BlogCard4,
-        link: '#',
+        link: '/blog4',
     },
 ]
 
@@ -49,11 +51,12 @@ const Blogs = () => {
                         {BlogsData.map((blog) => {
                            return (
                             <UpdateFollower
+                                key={blog.id}
                                 mouseOptions={{
                                     backgroundColor: 'black',
                                     zIndex: 999,
                                     followSpeed: 1.5,
-                                    text: 'Leia',
+                                    text: 'Clique',
                                     textFontSize: '3px',
                                     scale: 5,
                                 }}
@@ -65,14 +68,11 @@ const Blogs = () => {
                                             {blog.title}
                                         </h2>
                                         <p className='line-clamp-2'>{blog.desc}</p>
-                                        <motion.a
-                                            whileHover={{ scale: 1.1 }}
-                                            whileTap={{ scale: 0.9 }}
-                                            href={blog.link}
-                                            className='text-primary'
-                                        >
-                                            Saiba mais
-                                        </motion.a>
+                                        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                                            <Link to={`/blog${blog.id}`} className='text-primary'>
+                                                Saiba mais
+                                            </Link>
+                                        </motion.div>
                                     </div>
                                 </div>
                             </UpdateFollower>
