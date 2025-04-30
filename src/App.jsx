@@ -14,6 +14,10 @@ import Blog2 from './pages/blogs/Blog2';
 import Blog3 from './pages/blogs/Blog3';
 import Blog4 from './pages/blogs/Blog4';
 
+import Service1 from './pages/servicos/Service1';
+import Service2 from './pages/servicos/Service2';
+import Service3 from './pages/servicos/Service3';
+
 import { UpdateFollower } from 'react-mouse-follower';
 import ScrollToTop from './ScrollToTop';
 
@@ -56,6 +60,9 @@ const App = () => {
         <Route path="/blog2" element={<Blog2 />} />
         <Route path="/blog3" element={<Blog3 />} />
         <Route path="/blog4" element={<Blog4 />} />
+        <Route path="/service1" element={<Service1 />} />
+        <Route path="/service2" element={<Service2 />} />
+        <Route path="/service3" element={<Service3 />} />
       </Routes>
     </Router>
   );

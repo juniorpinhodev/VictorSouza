@@ -9,7 +9,7 @@ const ServicesData = [
     {
         id: 1,
         title: 'Leilões de Imóveis',
-        link: "#",    
+        link: "/service1",    
         desc: 'Identificação e análise de oportunidades premium em leilões judiciais e extrajudiciais. Suporte completo desde a avaliação até a arrematação do imóvel.',
         icon: icon1,
         delay: 0.1,
@@ -17,7 +17,7 @@ const ServicesData = [
     {
         id: 2,
         title: 'Investimentos Imobiliários',
-        link: "#",   
+        link: "/service2",   
         desc: 'Estratégias personalizadas para maximizar seu retorno em imóveis arrematados. Análise de mercado, planejamento de reforma e estratégias de revenda.',
         icon: icon2,
         delay: 0.6,
@@ -25,7 +25,7 @@ const ServicesData = [
     {
         id: 3,
         title: 'Consultoria Especializada',
-        link: "#",   
+        link: "/service3",   
         desc: 'Mentoria exclusiva para investidores iniciantes e experientes no mercado de leilões. Aprenda a identificar boas oportunidades e evitar armadilhas comuns.',
         icon: icon3,
         delay: 1.2,
@@ -80,7 +80,7 @@ const Services = () => {
                                     scale: 1.03,
                                     transition: { duration: 0.2 }
                                 }}
-                                className="flex flex-col items-center justify-center p-5 max-w-[440px] mx-auto shadow-lg rounded-xl bg-white"
+                                className="flex flex-col items-center justify-center p-5 max-w-[440px] mx-auto shadow-lg rounded-xl bg-white min-h-0 md:min-h-[368px] xl:min-h-0"
                             >
                                 <img 
                                     src={service.icon}
