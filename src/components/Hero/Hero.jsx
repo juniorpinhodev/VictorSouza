@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { UpdateFollower } from 'react-mouse-follower';
 import { FaArrowRight } from 'react-icons/fa';
 import BgImageCasa from '../../assets/BgImage.jpg';
 import VictorPng from '../../assets/Victor.png';
+import ModalSobreVictor from '../../components/Modals/ModalSobreVictor'; 
 
 const bgImage = {
     backgroundImage: `url(${BgImageCasa})`,
@@ -13,6 +14,8 @@ const bgImage = {
 }
 
 const Hero = () => {
+ const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <main id="home" style={bgImage}>
         <div className='bg-gradient-to-r from-primary to bg-primaryDark/90'>
@@ -45,12 +48,16 @@ const Hero = () => {
                                     scale: 5,
                                     mixBlendMode: 'soft-light',
                                 }}
-                            >
-                                <button className='outline-btn flex justify-center items-center gap-2 group'>
-                                    Explore
-                                    <FaArrowRight className='group-hover:translate-x-2 transition'/>  
+                                >
+                                <button
+                                    onClick={() => setModalOpen(true)}
+                                    className='outline-btn flex justify-center items-center gap-2 group'
+                                >
+                                    Conheça
+                                    <FaArrowRight className='group-hover:translate-x-2 transition' />
                                 </button>
                             </UpdateFollower>
+
                         </motion.div>
 
                         {/* Investidor imobiliário */}
@@ -268,6 +275,7 @@ const Hero = () => {
                 </section>
             </div>
         </div>
+        <ModalSobreVictor isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </main>
   );
 };
