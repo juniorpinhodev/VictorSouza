@@ -41,11 +41,17 @@ const Home = () => (
         followSpeed: 1.6,
       }}
     >
-      <Services />
+      <section id="services">
+        <Services />
+      </section>
       <Banner />
       <BannerText />
-      <Blogs />
-      <Footer />
+      <section id="blogs">
+        <Blogs />
+      </section>
+      <section id="contact">
+        <Footer />
+      </section>
     </UpdateFollower>
   </>
 );

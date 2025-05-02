@@ -12,17 +12,17 @@ const NavbarMenu = [
   {
     id: 2,
     title: 'Sobre',
-    url: '#'
+    url: '#sobre'
   },
   {
     id: 3,
     title: 'Serviços',
-    url: '#'
+    url: '#service'
   },
   {
     id: 4,
     title: 'Contatos',
-    url: '#'
+    url: '#contact'
   }
 ]
 
@@ -68,7 +68,7 @@ const Navbar = () => {
                   mixBlendMode: 'difference',
                 }}
               >
-                <a href={item.link} className='inline-block text-sm py-2 px-3 uppercase'>{item.title}</a>
+                <a href={item.url} className='inline-block text-sm py-2 px-3 uppercase'>{item.title}</a>
               </UpdateFollower>
             </li>
         ))}

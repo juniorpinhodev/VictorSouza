@@ -14,7 +14,7 @@ const bgImage = {
 
 const Hero = () => {
   return (
-    <main style={bgImage}>
+    <main id="home" style={bgImage}>
         <div className='bg-gradient-to-r from-primary to bg-primaryDark/90'>
             <div className='container text-white'>
                 {/* Layout para desktop (visível apenas em telas médias e grandes) */}

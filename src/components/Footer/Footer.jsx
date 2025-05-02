@@ -15,7 +15,7 @@ const socialLinks = [
 const Footer = () => {
   return (
     <>
-    <footer className="bg-primaryDark/80 pt-12 pb-8 text-white">
+    <footer id="contact" className="bg-primaryDark/80 pt-12 pb-8 text-white">
         <div className="container">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {/* <!-- detalhes --> */}
@@ -50,10 +50,10 @@ const Footer = () => {
                 <h1 className="text-3xl font-bold"> Menu</h1>
                 <div className="flex justify-center">
                     <ul className="flex flex-col items-center gap-1">
-                        <li>Home</li>
-                        <li>Sobre</li>
-                        <li>Serviços</li>
-                        <li>Blogs</li>
+                        <li><a href="#" className="hover:underline">Home</a></li>
+                        <li><a href="#sobre" className="hover:underline">Sobre</a></li>
+                        <li><a href="#service" className="hover:underline">Serviços</a></li>
+                        <li><a href="#blogs" className="hover:underline">Blogs</a></li>
                     </ul>
                 </div>
             </motion.div>

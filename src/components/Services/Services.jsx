@@ -34,7 +34,7 @@ const ServicesData = [
 
 const Services = () => {
     return (
-        <section className="bg-gray-100 font-poppins py-8">
+        <section id="service" className="bg-gray-100 font-poppins py-8">
             <div className="container py-14">
                 <motion.h1 
                     initial={{ opacity: 0, y: -20 }}
