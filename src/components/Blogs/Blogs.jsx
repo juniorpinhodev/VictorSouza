@@ -11,8 +11,8 @@ import BlogCard4 from '../../assets/blogs/blog4.jpg';
 const BlogsData = [
     {
         id: 1,
-        title: 'Como identificar as melhores oportunidades em leilões da Caixa',
-        desc: 'Aprenda as estratégias para encontrar imóveis com potencial de valorização em leilões bancários.',
+        title: 'Como encontrar imóveis em leilões da Caixa',
+        desc: 'Descubra como encontrar imóveis baratos e lucrativos nos leilões da Caixa Econômica Federal',
         img: BlogCard1,
         link: '/blog1',
     },

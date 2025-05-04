@@ -51,7 +51,6 @@ const Footer = () => {
                 <div className="flex justify-center">
                     <ul className="flex flex-col items-center gap-1">
                         <li><a href="#" className="hover:underline">Home</a></li>
-                        <li><a href="#sobre" className="hover:underline">Sobre</a></li>
                         <li><a href="#service" className="hover:underline">Serviços</a></li>
                         <li><a href="#blogs" className="hover:underline">Blogs</a></li>
                     </ul>

@@ -11,13 +11,13 @@ const NavbarMenu = [
   },
   {
     id: 2,
-    title: 'Sobre',
-    url: '#sobre'
+    title: 'Serviços',
+    url: '#service'
   },
   {
     id: 3,
-    title: 'Serviços',
-    url: '#service'
+    title: 'Blogs',
+    url: '#blogs'
   },
   {
     id: 4,
