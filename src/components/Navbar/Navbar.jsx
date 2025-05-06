@@ -28,6 +28,23 @@ const NavbarMenu = [
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  // Detectar se é dispositivo móvel ao carregar o componente
+  React.useEffect(() => {
+    const checkIfMobile = () => {
+      const userAgent = navigator.userAgent.toLowerCase();
+      const isMobileDevice = /android|webos|iphone|ipad|ipod|blackberry|windows phone/i.test(userAgent);
+      setIsMobile(isMobileDevice || window.innerWidth < 768);
+    };
+    
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -115,13 +132,42 @@ const Navbar = () => {
 
           {/* Mobile Hamburger section */}
           <div className='md:hidden'>
-            <button onClick={toggleMenu} className='focus:outline-none' aria-label='Menu'>
-              {isMenuOpen ? (
-                <MdClose className='text-4xl' />
-              ) : (
-                <MdMenu className='text-4xl' />
-              )}
-            </button>
+            {isMobile ? (
+              <button 
+                onClick={toggleMenu} 
+                className='focus:outline-none p-2 z-50 relative' 
+                aria-label='Menu'
+                style={{ touchAction: 'manipulation' }}
+              >
+                {isMenuOpen ? (
+                  <MdClose className='text-4xl' />
+                ) : (
+                  <MdMenu className='text-4xl' />
+                )}
+              </button>
+            ) : (
+              <UpdateFollower
+                mouseOptions={{
+                  backgroundColor: 'white',
+                  zIndex: 1000,
+                  followSpeed: 1.6,
+                  scale: 5,
+                  mixBlendMode: 'difference',
+                }}
+              >
+                <button 
+                  onClick={toggleMenu} 
+                  className='focus:outline-none' 
+                  aria-label='Menu'
+                >
+                  {isMenuOpen ? (
+                    <MdClose className='text-4xl' />
+                  ) : (
+                    <MdMenu className='text-4xl' />
+                  )}
+                </button>
+              </UpdateFollower>
+            )}
           </div>
         </motion.nav>
 
@@ -147,6 +193,7 @@ const Navbar = () => {
                       href={item.url} 
                       className='block text-lg py-2 px-1 uppercase hover:pl-3 hover:text-white/70 transition-all duration-300'
                       onClick={toggleMenu}
+                      style={{ touchAction: 'manipulation' }}
                     >
                       {item.title}
                     </a>
