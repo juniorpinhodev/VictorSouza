@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MdMenu, MdClose } from 'react-icons/md';
 import { UpdateFollower } from 'react-mouse-follower';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -29,9 +29,10 @@ const NavbarMenu = [
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   
   // Detectar se é dispositivo móvel ao carregar o componente
-  React.useEffect(() => {
+  useEffect(() => {
     const checkIfMobile = () => {
       const userAgent = navigator.userAgent.toLowerCase();
       const isMobileDevice = /android|webos|iphone|ipad|ipod|blackberry|windows phone/i.test(userAgent);
@@ -43,6 +44,23 @@ const Navbar = () => {
     
     return () => {
       window.removeEventListener('resize', checkIfMobile);
+    };
+  }, []);
+
+  // Detectar o scroll para aplicar efeitos no navbar fixo
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -85,7 +103,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='bg-brandDark text-white py-8 font-varela'>
+      <div className={`fixed top-0 left-0 right-0 z-50 bg-brandDark text-white ${isScrolled ? 'shadow-lg py-4' : 'py-8'} transition-all duration-300 font-varela`}>
         <motion.nav 
           initial={{ opacity: 0}}
           animate={{ opacity: 1 }}
@@ -204,6 +222,8 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </div>
+      {/* Espaçador para compensar o navbar fixo */}
+      <div className={`${isScrolled ? 'h-16' : 'h-24'} transition-all duration-300`}></div>
     </>
   );
 };
