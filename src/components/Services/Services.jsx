@@ -10,7 +10,7 @@ const ServicesData = [
         id: 1,
         title: 'Leilões de Imóveis',
         link: "/service1",    
-        desc: 'Identificação e análise de oportunidades premium em leilões judiciais e extrajudiciais. Suporte completo desde a avaliação até a arrematação do imóvel.',
+        desc: 'Identificação e análise de oportunidades premium em leilões judiciais e extrajudiciais, com foco em imóveis de alta liquidez e potencial de valorização.',
         icon: icon1,
         delay: 0.1,
     },

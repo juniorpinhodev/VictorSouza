@@ -3,7 +3,6 @@ import { MdMenu, MdClose } from 'react-icons/md';
 import { UpdateFollower } from 'react-mouse-follower';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Menu padrão que será usado quando não for passado um customMenu
 const DefaultNavbarMenu = [
   {
     id: 1,
@@ -28,14 +27,14 @@ const DefaultNavbarMenu = [
 ];
 
 const Navbar = ({ customMenu }) => {
-  // Usar o menu personalizado se for fornecido, caso contrário, usar o menu padrão
+ 
   const NavbarMenu = customMenu || DefaultNavbarMenu;
   
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   
-  // Detectar se é dispositivo móvel ao carregar o componente
+
   useEffect(() => {
     const checkIfMobile = () => {
       const userAgent = navigator.userAgent.toLowerCase();
@@ -51,7 +50,7 @@ const Navbar = ({ customMenu }) => {
     };
   }, []);
 
-  // Detectar o scroll para aplicar efeitos no navbar fixo
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
