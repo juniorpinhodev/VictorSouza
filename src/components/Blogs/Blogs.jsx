@@ -18,8 +18,8 @@ const BlogsData = [
     },
     {
         id: 2,
-        title: 'Os 5 erros mais comuns ao investir em imóveis de leilão',
-        desc: 'Evite prejuízos conhecendo as principais armadilhas que afetam investidores iniciantes.',
+        title: 'Como Avaliar Imóveis de Leilão na Prática',
+        desc: 'Dicas valiosas para quem deseja investir com segurança e inteligência no mercado imobiliário',
         img: BlogCard2,
         link: '/blog2',
     },

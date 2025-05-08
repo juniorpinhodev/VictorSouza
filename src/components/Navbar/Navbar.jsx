@@ -3,7 +3,8 @@ import { MdMenu, MdClose } from 'react-icons/md';
 import { UpdateFollower } from 'react-mouse-follower';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const NavbarMenu = [
+// Menu padrão que será usado quando não for passado um customMenu
+const DefaultNavbarMenu = [
   {
     id: 1,
     title: 'Home',
@@ -26,7 +27,10 @@ const NavbarMenu = [
   }
 ];
 
-const Navbar = () => {
+const Navbar = ({ customMenu }) => {
+  // Usar o menu personalizado se for fornecido, caso contrário, usar o menu padrão
+  const NavbarMenu = customMenu || DefaultNavbarMenu;
+  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -121,7 +125,7 @@ const Navbar = () => {
                 mixBlendMode: 'difference',
               }}
             >
-              <a href='#' className='text-xl font-bold uppercase'>
+              <a href='/' className='text-xl font-bold uppercase'>
                 Victor |{" "}<span className='font-extralight text-white/70'>Souza</span>
               </a>
             </UpdateFollower>
