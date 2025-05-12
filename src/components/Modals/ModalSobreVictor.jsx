@@ -4,20 +4,17 @@ import { motion } from 'framer-motion';
 const ModalSobreVictor = ({ isOpen, onClose }) => {
   const modalRef = useRef(null);
 
-  // Função para garantir que o modal seja scrollável quando aberto
   useEffect(() => {
     if (isOpen) {
-      // Impedir scroll do body quando o modal estiver aberto
+
       document.body.style.overflow = 'hidden';
       
-      // Garantir que o modal tenha foco para scroll
       if (modalRef.current) {
         modalRef.current.focus();
       }
     }
     
     return () => {
-      // Restaurar scroll do body quando o modal for fechado
       document.body.style.overflow = 'auto';
     };
   }, [isOpen]);
@@ -36,33 +33,36 @@ const ModalSobreVictor = ({ isOpen, onClose }) => {
         tabIndex={-1}
       >
         {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-teal-400"></div>
         <div className="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-blue-100/30 blur-xl"></div>
         
-        {/* Close button - Reposicionado para ser mais acessível em mobile */}
-        <div className="flex justify-between items-center mb-4 sticky top-0">
-          <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent pr-8">
-            Quem é Victor Souza
-          </h2>
+        <div className="sticky top-0 z-10 bg-gradient-to-br from-white to-gray-50 pb-2">
+
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-teal-400"></div>
           
-          <motion.button 
-            onClick={onClose}
-            whileHover={{ scale: 1.1, rotate: 90 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-red-50 text-gray-500 hover:text-red-500 transition-colors duration-300 flex-shrink-0"
-            aria-label="Fechar modal"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </motion.button>
+          <div className="flex justify-between items-center pt-2 mb-2">
+            <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent pr-8">
+              Quem é Victor Souza
+            </h2>
+            
+            <motion.button 
+              onClick={onClose}
+              whileHover={{ scale: 1.1, rotate: 90 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-red-50 text-gray-500 hover:text-red-500 transition-colors duration-300 flex-shrink-0"
+              aria-label="Fechar modal"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </motion.button>
+          </div>
+          
+          {/* Subtitle */}
+          <p className="text-gray-500 text-sm font-medium mb-2 border-b border-gray-100 pb-4">
+            Especialista em Investimentos Imobiliários
+          </p>
         </div>
-        
-        {/* Subtitle */}
-        <p className="text-gray-500 mt-1 text-sm font-medium mb-4 border-b border-gray-100 pb-4">
-          Especialista em Investimentos Imobiliários
-        </p>
         
         {/* Content */}
         <div className="text-gray-700 leading-relaxed space-y-4 font-light text-sm sm:text-base">
