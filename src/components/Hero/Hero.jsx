@@ -179,20 +179,14 @@ const Hero = () => {
                                 Victor <br /> {" "}<span className='text-transparent text-outline'>Souza</span>
                             </h1>
 
-                            <UpdateFollower
-                                mouseOptions={{
-                                    backgroundColor: 'white',
-                                    zIndex: 1000,
-                                    followSpeed: 1.6,
-                                    scale: 5,
-                                    mixBlendMode: 'soft-light',
-                                }}
+                            {/* Botão sem UpdateFollower para mobile */}
+                            <button 
+                                onClick={() => setModalOpen(true)}
+                                className='outline-btn flex justify-center items-center gap-2 group w-[100px] px-6 py-2 text-[18px] font-semibold'
                             >
-                                <button className='outline-btn flex justify-center items-center gap-2 group w-[100px] px-6 py-2 text-[18px] font-semibold'>
-                                    Explore
-                                    <FaArrowRight className='group-hover:translate-x-2 transition'/>  
-                                </button>
-                            </UpdateFollower>
+                                Conheça
+                                <FaArrowRight className='group-hover:translate-x-2 transition'/>  
+                            </button>
                         </motion.div>
                     </div>
                     
