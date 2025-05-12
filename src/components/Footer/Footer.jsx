@@ -1,7 +1,8 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { FaFacebook, FaInstagram, FaYoutube, FaWhatsapp, FaTiktok, FaLinkedin } from "react-icons/fa";
 import { FaPhone, FaMapLocation } from "react-icons/fa6";
-import { motion } from "framer-motion";
+import { HiChevronUp } from "react-icons/hi2";
 
 const socialLinks = [
     { href: "https://wa.me/5547999287305", icon: <FaWhatsapp /> },
@@ -17,7 +18,7 @@ const Footer = () => {
     <>
     <footer id="contact" className="bg-primaryDark/80 pt-12 pb-8 text-white">
         <div className="container">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-A2 md:grid-cols-3 gap-8">
             {/* <!-- detalhes --> */}
             <motion.div
                 initial={{ opacity: 0, y: 100 }}
@@ -80,11 +81,24 @@ const Footer = () => {
                 </div>
             </motion.div>        
             </div>
-             {/* <!-- copyright --> */}
-            
-             <p className="text-white text-center mt-8 border-t-2 pt-8">© 2025 Victor Souza — Todos os direitos reservados</p>
-             <p className="text-center">Desenvolvido por <a href="https://juniorpinho.dev" target="_blank" > Junior Pinho | DEV</a></p>
-        </div>
+                {/* <!-- copyright --> */}
+                
+                <p className="text-white text-center mt-8 border-t-2 pt-8">© 2025 Victor Souza — Todos os direitos reservados</p>
+                <p className="text-center">Desenvolvido por <a href="https://juniorpinho.dev" target="_blank" > Junior Pinho | DEV</a></p>
+            </div>
+
+        <motion.button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.5 }}
+            className="fixed bottom-6 right-6 bg-[#2b9de6] hover:bg-[#2589c9] text-white p-3 rounded-full shadow-lg z-50"
+            aria-label="Voltar ao topo"
+            >
+            <HiChevronUp  className="text-xl" />
+        </motion.button>
+
     </footer>
   </>
   )

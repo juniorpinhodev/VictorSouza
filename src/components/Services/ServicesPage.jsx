@@ -12,6 +12,7 @@ const BlogNavbarMenu = [
   }
 ];
 
+
 // Componente para renderizar diferentes tipos de conteúdo
 const ContentRenderer = ({ item }) => {
   // Se o item começa com "- ", renderiza como um item de lista
@@ -93,7 +94,25 @@ const ServicePage = ({ title, subtitle, content }) => {
         </div>
       </section>
       
-      <Footer />
+      
+  <footer className="bg-black text-white py-8">
+    <div className="container mx-auto px-4 text-center">
+      <h2 className="text-2xl font-bold mb-2">Entre em contato!</h2>
+      <p className="mb-4">Estou pronto para ajudar você a alcançar os melhores resultados.</p>
+      <button
+        onClick={handleWhatsAppClick}
+        className="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-green-500 rounded-md hover:bg-green-600 transition shadow-sm"
+      >
+        <FaWhatsapp className="mr-2 text-lg" />
+        Enviar mensagem no WhatsApp
+      </button>
+      
+        {/* <!-- copyright --> */}
+        <p className="text-white text-center mt-8 border-t-2 pt-8">© 2025 Victor Souza — Todos os direitos reservados</p>
+        <p className="text-center">Desenvolvido por <a href="https://juniorpinho.dev" target="_blank" > Junior Pinho | DEV</a></p>
+    </div>
+  </footer>
+      );
     </>
   );
 };

@@ -44,7 +44,7 @@ const ModalSobreVictor = ({ isOpen, onClose }) => {
             Victor Souza é um investidor imobiliário especializado em leilões judiciais e extrajudiciais, 
             com foco na aquisição estratégica de imóveis com alto potencial de valorização. Sua experiência 
             no mercado financeiro é diversificada, tendo atuado anteriormente com diferentes modalidades de 
-            investimentos, incluindo ações e criptomoedas. Insatisfeito com a falta de controle nesses mercados, 
+            investimentos, incluindo ações, forex, commodities e criptoativos. Insatisfeito com a falta de controle nesses mercados, 
             Victor direcionou seu interesse para o setor imobiliário.
           </p>
           
